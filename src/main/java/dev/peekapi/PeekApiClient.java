@@ -399,7 +399,11 @@ public class PeekApiClient {
         } catch (SendException e) {
             throw e;
         } catch (java.io.IOException e) {
-            throw new SendException("Network error: " + e.getMessage(), true);
+            String msg = e.getMessage();
+            if (msg == null && e.getCause() != null) {
+                msg = e.getCause().getClass().getSimpleName() + ": " + e.getCause().getMessage();
+            }
+            throw new SendException("Network error: " + msg, true);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             throw new SendException("Request interrupted", true);
