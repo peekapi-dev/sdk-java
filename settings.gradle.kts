@@ -1,1 +1,1 @@
-rootProject.name = "sdk-java"
+rootProject.name = "peekapi"
