@@ -22,7 +22,7 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class PeekApiClient {
 
-  static final String SDK_VERSION = "0.1.0";
+  static final String SDK_VERSION = "0.1.1";
   static final String SDK_HEADER = "java/" + SDK_VERSION;
   static final int MAX_PATH_LENGTH = 2048;
   static final int MAX_METHOD_LENGTH = 16;
